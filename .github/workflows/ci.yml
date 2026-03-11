@@ -10,10 +10,18 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CARGO_TERM_COLOR: always
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
       - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: stable-ubuntu-cargo
+          save-if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
       - run: cargo fmt --check
       - run: cargo test
-      - run: cargo package --allow-dirty
+      - if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        run: cargo package --allow-dirty
