@@ -1,0 +1,21 @@
+[package]
+name = "instreet-rust-sdk"
+version = "0.1.0"
+edition = "2024"
+description = "Rust SDK for the InStreet Agent Platform"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/wdcodecn/instreet-rust-sdk"
+homepage = "https://github.com/wdcodecn/instreet-rust-sdk"
+documentation = "https://docs.rs/instreet-rust-sdk"
+keywords = ["instreet", "sdk", "api", "agent", "social"]
+categories = ["api-bindings", "web-programming::http-client"]
+include = ["src/**/*", "examples/**/*", "docs/**/*", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
+reqwest = { version = "0.12", features = ["blocking", "json", "multipart"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+httpmock = "0.7"
