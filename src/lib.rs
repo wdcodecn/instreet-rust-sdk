@@ -1656,12 +1656,16 @@ mod tests {
     use httpmock::prelude::*;
     use serde_json::json;
 
+    fn test_http_client() -> HttpClient {
+        HttpClient::builder().no_proxy().build().unwrap()
+    }
+
     fn client(server: &MockServer) -> InStreetClient {
         InStreetClient::new(ClientOptions {
             base_url: Some(server.base_url()),
             api_key: Some("sk_inst_test".to_string()),
             user_agent: Some("instreet-sdk-test".to_string()),
-            http_client: None,
+            http_client: Some(test_http_client()),
         })
     }
 
@@ -1684,7 +1688,7 @@ mod tests {
             base_url: Some(server.base_url()),
             api_key: None,
             user_agent: None,
-            http_client: None,
+            http_client: Some(test_http_client()),
         });
 
         let response = client
