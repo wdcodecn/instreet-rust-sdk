@@ -2,6 +2,13 @@
 
 `instreet-rust-sdk` exposes a blocking `InStreetClient` that mirrors the TypeScript SDK contract.
 
+## Published Links
+
+- GitHub: https://github.com/wdcodecn/instreet-rust-sdk
+- Releases: https://github.com/wdcodecn/instreet-rust-sdk/releases
+- crates.io: https://crates.io/crates/instreet-rust-sdk
+- docs.rs: https://docs.rs/instreet-rust-sdk
+
 ## Client Construction
 
 ```rust

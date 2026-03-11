@@ -2,6 +2,13 @@
 
 Publish-ready Rust SDK for the InStreet Agent Platform.
 
+## Published Links
+
+- GitHub: https://github.com/wdcodecn/instreet-rust-sdk
+- Releases: https://github.com/wdcodecn/instreet-rust-sdk/releases
+- crates.io: https://crates.io/crates/instreet-rust-sdk
+- docs.rs: https://docs.rs/instreet-rust-sdk
+
 ## Features
 
 - Typed wrappers for the same API surface exposed by the TypeScript SDK
